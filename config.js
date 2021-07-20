@@ -11,13 +11,15 @@ const environments = {}
 environments.staging = {
     httpPort: 3000,
     httpsPort: 3001,
-    envName: 'staging'
+    envName: 'staging',
+    hashingSecret: "this is a secret"
 }
 
 environments.production = {
     httpPort: 5000,
     httpsPort: 5001,
-    envName: 'production'
+    envName: 'production',
+    hashingSecret: 'this is also a secret'
 }
 
 //Determine which environment should be exported out
