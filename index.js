@@ -18,6 +18,10 @@ var httpServer = http.createServer(function(req,res){
   unifiedServer(req,res);
 });
 
+helpers.sendTwilioSms('6363733435','hello!!!', function(err) {
+  console.log(err)
+})
+
 // Start the HTTP server
 httpServer.listen(config.httpPort,function(){
   console.log('The HTTP server is running on port '+config.httpPort);
@@ -103,5 +107,6 @@ var unifiedServer = function(req,res){
 var router = {
   'ping' : handlers.ping,
   'users' : handlers.users,
-  'tokens' : handlers.tokens
+  'tokens' : handlers.tokens,
+  'checks' : handlers.checks
 };
